@@ -1,0 +1,10 @@
+<?php
+/**
+ * 404 not found page
+ */
+
+class _404  {
+     function _construct() {
+        echo 'page not found';
+    }
+}
