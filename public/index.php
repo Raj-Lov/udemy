@@ -1,1 +1,8 @@
-<h1>Hello Rajesh</h1>
+<?php
+
+class app {
+    function __construct(){
+
+    }
+}
+$app = new App();
