@@ -1,18 +1,12 @@
 <?php
 
-
-    class Home {
-
+    class Home extends Controller {
         public function index(){
-            echo "View Home page";
+            $db = new Database();
+            $db->query();
+            $data['title'] = 'Home';
+            $this->view('home',$data);
         }
 
-        function edit(){
-            echo "Edit Home page";
-        }
-
-        function delete(){
-            echo "Delete Home page";
-        }
     }
 
