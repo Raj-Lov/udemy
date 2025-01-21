@@ -23,7 +23,7 @@ class Database {
 				{
 					$type = PDO::FETCH_OBJ;
 				}else{
-					$type = PDO::FETCH_ASSOC;
+					$type = PDO:: FETCH_ASSOC;
 				}
 
 				$result = $stm->fetchAll($type);
@@ -36,5 +36,23 @@ class Database {
 		}
 
 		return false;
+	}
+
+	public function create_tables(){
+		//Users table
+		$query = "
+					CREATE TABLE IF NOT EXISTS `users` (
+			`id` int(11) NOT NULL,
+			`username` varchar(100) NOT NULL,
+			`email` varchar(100) NOT NULL,
+			`password` varchar(255) NOT NULL,
+			PRIMARY KEY (`id`),
+			UNIQUE KEY `id` (`id`),
+			KEY `email` (`email`)
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+		";
+
+		$this->query($query);
 	}
 }
